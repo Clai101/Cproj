@@ -7,6 +7,7 @@ int make_arr()
 {
 	int n;
 	scanf("%i", &n);
+	printf("%d", n);
 
 }
 
