@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="func_dir.c" />
     <ClCompile Include="Source.c" />
   </ItemGroup>
   <ItemGroup>

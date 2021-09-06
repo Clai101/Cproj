@@ -3,21 +3,15 @@
 #define Tab '\t'
 
 
-int make_arr()
-{
-	int n;
-	scanf("%i", &n);
-	printf("%d", n);
-
-}
-
-
 int main()
 {
-	int n = 0;
-	scanf("%i", &n);
-	printf("%d \n", n);
-
+	unsigned short n;
+	scanf("%d", &n);
+	float* main_arry = make_arr(n);
+	for (int i = 0; i != n; i++)
+	{
+		printf("%.0f \t", *(main_arry + i));
+	}
 	system("pause");
 	return 0;
 }
