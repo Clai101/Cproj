@@ -141,7 +141,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.c" />
-    <ClCompile Include="Sourcef.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header_for_C.h" />
