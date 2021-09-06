@@ -10,6 +10,7 @@ int main()
 	scanf("%d", &n);
 	float* main_arry = make_arr(n);
 	main_arry = use_sin(main_arry, n);
+	unsigned short max_element_index = find_max_element(main_arry, n);
 	for (int i = 0; i != n; i++)
 	{
 		printf("%f  ", *(main_arry + i));
