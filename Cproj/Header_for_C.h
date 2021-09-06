@@ -9,7 +9,7 @@
 #include <math.h>
 
 float* make_arr(unsigned short n);
-
+float* use_sin(float* main_arry, unsigned short n);
 
 
 #endif
