@@ -1,14 +1,20 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <malloc.h>
+#include "Header_for_C.h"
 #define newl '\n'
 #define Tab '\t'
+
+
+int make_arr()
+{
+	int n;
+	scanf("%i", &n);
+
+}
 
 
 int main()
 {
 	int n = 0;
-	scanf("%d", &n);
+	scanf("%i", &n);
 	printf("%d \n", n);
 
 	system("pause");
