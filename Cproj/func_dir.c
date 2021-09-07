@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 
+
 float* make_arr(unsigned short n)
 {
 	float* main_arry; 
@@ -47,16 +48,19 @@ float* use_sin(float* main_arry, unsigned short n)
 	return main_arry;
 }
 
-unsigned short find_max_element(float* main_arry, unsigned short n)
+unsigned short find_max_negative_element(float* main_arry, unsigned short n)
 {
-	float time_max = *(main_arry);
-	unsigned short index = 1;
+	float time_max = -2;
+	unsigned short index = 65535;
 	for (int i = 0; i != n; i++)
 	{
-		if (*(main_arry + i) > time_max)
+		if (*(main_arry + i) < 0)
 		{
-			time_max = *(main_arry + i);
-			index = i + 1;
+			if (*(main_arry + i) > time_max)
+			{
+				time_max = *(main_arry + i);
+				index = i + 1;
+			}
 		}
 	}
 	return index;
