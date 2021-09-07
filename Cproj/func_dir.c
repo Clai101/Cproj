@@ -24,15 +24,15 @@ float find_st_float(char name_of_value)
 unsigned short find_st_short(char name_of_value)
 {
 	unsigned short time_short;
-	printf("Please, enter digit %c, wich is belinged to [1, 65534]: ", name_of_value);
-	if (!scanf("%d", &time_short))
+	printf("Please, enter digit %c, wich is belinged to [1, 65530]: ", name_of_value);
+	if (!scanf("%hu", &time_short))
 	{
-		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN \n ");
+		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
-	if ((time_short > 65534) | (time_short < 0))
+	if ((time_short > 65530) || (time_short < 0))
 	{
-		printf("Wrong interval interval was taken.\n[1, 65534] was expected.\nTRY AGAIN \n ");
+		printf("Wrong interval interval was taken.\n[1, 65534] was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
 	return time_short;
@@ -41,13 +41,13 @@ unsigned short find_st_short(char name_of_value)
 float* make_arr(unsigned short n)
 {
 	float* main_arry; 
-	system("chcp 1251");
-	system("cls");
-	main_arry = (int*)malloc(n * sizeof(float));
+	main_arry = (float*)malloc(n * sizeof(float));
 	for (int i = 0; i != n; i++)
 	{
 		*(main_arry + i) = i + 1;
 	}
+public: 
+	main_arry;
 	return main_arry;
 }
 
@@ -72,7 +72,7 @@ unsigned short find_max_negative_element(float* main_arry, unsigned short n)
 	unsigned short index = 65535;
 	for (int i = 0; i != n; i++)
 	{
-		if ((*(main_arry + i) < 0) & (*(main_arry + i) > time_max))
+		if ((*(main_arry + i) < 0) && (*(main_arry + i) > time_max))
 		{
 			time_max = *(main_arry + i);
 			index = i + 1;
@@ -81,4 +81,41 @@ unsigned short find_max_negative_element(float* main_arry, unsigned short n)
 	return index;
 }
 
-float* sort_by_index()
+float* clean_by_index(float* main_arry, unsigned short n)
+{
+	float* time_arry;
+	unsigned short stap = 1;
+	time_arry = (float*)malloc(n * sizeof(float));
+	for (int i = 0; i != n; i++)
+	{
+		if ((*(main_arry + i) > 0) && ((*(main_arry + i) < (i + 1) / 3) || ((i + 1) >= 4)))
+		{
+			*(time_arry + stap) = *(main_arry + i);
+			stap++;
+		}
+	}
+	*(time_arry) = stap - 1;
+	return time_arry;
+}
+
+float* castling(float* main_arry, unsigned short n)
+{
+	float* main_arry_2;
+	main_arry_2 = (float*)malloc(n * sizeof(float));
+	for (int i = 0; i != n; i++)
+	{
+		*(main_arry_2 + i) = *(main_arry + 1 + i);
+	}
+	return main_arry_2;
+}
+
+float find_average(float* main_arry, unsigned short n)
+{
+	float average = 0
+		;
+	for (int i = 0; i != n; i++)
+	{
+		average = average + *(main_arry + i);
+	}
+	return average / n;
+}
