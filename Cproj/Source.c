@@ -2,7 +2,6 @@
 #define newl '\n'
 #define Tab '\t'
 
-
 int main()
 {
 	unsigned short n;
@@ -15,7 +14,6 @@ int main()
 	{
 		printf("%f  ", *(main_arry + i));
 	}
-
 	printf("\n%d\n", max_negative_element);
 	system("pause");
 	return 0;

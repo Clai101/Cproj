@@ -4,6 +4,17 @@
 #include <stdlib.h>
 #include <math.h>
 
+float find_st(char name_of_value)
+{
+	float time_float;
+	printf("Please, enter %c: ", name_of_value);
+	if (!scanf("%f", &time_float))
+	{
+		printf("Wrong type of data was taken \n");
+		_Exit(EXIT_SUCCESS);
+	}
+	return time_float;
+}
 
 float* make_arr(unsigned short n)
 {
@@ -21,24 +32,9 @@ float* make_arr(unsigned short n)
 float* use_sin(float* main_arry, unsigned short n)
 {
 	float a = 0, x = 0, h = 0;
-	printf("Please, enter a: ");
-	if (!scanf("%f", &a))
-	{
-		printf("Wrong type of data was taken \n");
-		_Exit(EXIT_SUCCESS);
-	}
-	printf("Please, enter x: ");
-	if (!scanf("%f", &x))
-	{
-		printf("Wrong type of data was taken \n");
-		_Exit(EXIT_SUCCESS);
-	}
-	printf("Please, enter h: ");
-	if (!scanf("%f", &h))
-	{
-		printf("Wrong type of data was taken \n");
-		_Exit(EXIT_SUCCESS);
-	}
+	a = find_st('a');
+	x = find_st('x');
+	h = find_st('h');
 
 	for (int i = 0; i != n; i++)
 	{
@@ -54,13 +50,10 @@ unsigned short find_max_negative_element(float* main_arry, unsigned short n)
 	unsigned short index = 65535;
 	for (int i = 0; i != n; i++)
 	{
-		if (*(main_arry + i) < 0)
+		if ((*(main_arry + i) < 0) & (*(main_arry + i) > time_max))
 		{
-			if (*(main_arry + i) > time_max)
-			{
-				time_max = *(main_arry + i);
-				index = i + 1;
-			}
+			time_max = *(main_arry + i);
+			index = i + 1;
 		}
 	}
 	return index;
