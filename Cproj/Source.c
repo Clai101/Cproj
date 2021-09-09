@@ -32,7 +32,7 @@ int main()
 	float avarege = find_average(main_arry_2, n);
 
 	printf("Part three answer:\n");
-	printf("%f\n\n", avarege);
+	printf("Average is equal %f\n\n", c);
 
 	system("pause");
 	return 0;

@@ -15,7 +15,7 @@ float find_st_float(char name_of_value)
 	}
 	if ((time_float > 10) || (time_float < -10))
 	{
-		printf("Wrong interval interval was taken.\n[-10, 10] was expected.\nTRY AGAIN\n ");
+		printf("Wrong interval was taken.\n[-10, 10] was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
 	return time_float;
@@ -32,7 +32,7 @@ unsigned short find_st_short(char name_of_value)
 	}
 	if ((time_LLI > 65530) || (time_LLI < 1))
 	{
-		printf("Wrong interval interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
+		printf("Wrong interval  was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
 	unsigned short time_short = time_LLI;
@@ -99,7 +99,8 @@ float* clean_by_index(float* main_arry, unsigned short n)
 	}
 	if ((stap - 1) == 1)
 	{
-		printf("Sorry, there are not anyone elenents, which satisfy the condition");
+		printf("Part two answer:\n");
+		printf("Sorry, there are not anyone elements, which satisfy the condition. It means that part tree has not got an answer too.");
 		_Exit(EXIT_SUCCESS);
 	}
 	return time_arry;
