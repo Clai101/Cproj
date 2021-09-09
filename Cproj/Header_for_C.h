@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+float* main_arry;
+
 unsigned short find_st_short(char name_of_value);
 float* make_arr(unsigned short n);
 float* use_sin(float* main_arry, unsigned short n);

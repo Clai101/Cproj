@@ -4,18 +4,20 @@
 #include <stdlib.h>
 #include <math.h>
 
+float* main_arry;
+
 float find_st_float(char name_of_value)
 {
 	float time_float;
-	printf("Please, enter digit %c, wich is belinged to [-100, 100]: ", name_of_value);
+	printf("Please, enter digit %c, which is belonged to [-10, 10]: ", name_of_value);
 	if (!scanf("%f", &time_float))
 	{
-		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN \n ");
+		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n");
 		_Exit(EXIT_SUCCESS);
 	}
-	if ((time_float > 20) | (time_float < -20))
+	if ((time_float > 10) | (time_float < -10))
 	{
-		printf("Wrong interval interval was taken.\n[-100, 100] was expected.\nTRY AGAIN \n ");
+		printf("Wrong interval interval was taken.\n[-10, 10] was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
 	return time_float;
@@ -23,24 +25,24 @@ float find_st_float(char name_of_value)
 
 unsigned short find_st_short(char name_of_value)
 {
-	unsigned short time_short;
-	printf("Please, enter digit %c, wich is belinged to [1, 65530]: ", name_of_value);
-	if (!scanf("%hu", &time_short))
+	long long int time_LLI;
+	printf("Please, enter integer digit %c, which is belonged to [1, 65530]: ", name_of_value);
+	if (!scanf("%d", &time_LLI))
 	{
 		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
-	if ((time_short > 65530) || (time_short < 0))
+	if ((time_LLI > 65530) || (time_LLI < 1))
 	{
-		printf("Wrong interval interval was taken.\n[1, 65534] was expected.\nTRY AGAIN\n ");
+		printf("Wrong interval interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
+	unsigned short time_short = time_LLI;
 	return time_short;
 }
 
 float* make_arr(unsigned short n)
 {
-	float* main_arry; 
 	main_arry = (float*)malloc(n * sizeof(float));
 	for (int i = 0; i != n; i++)
 	{
@@ -64,21 +66,6 @@ float* use_sin(float* main_arry, unsigned short n)
 		*(main_arry + i) = 1.25*sin(3*a*x - (time_value)*h);
 	}
 	return main_arry;
-}
-
-unsigned short find_max_negative_element(float* main_arry, unsigned short n)
-{
-	float time_max = -2;
-	unsigned short index = 65535;
-	for (int i = 0; i != n; i++)
-	{
-		if ((*(main_arry + i) < 0) && (*(main_arry + i) > time_max))
-		{
-			time_max = *(main_arry + i);
-			index = i + 1;
-		}
-	}
-	return index;
 }
 
 float* clean_by_index(float* main_arry, unsigned short n)
