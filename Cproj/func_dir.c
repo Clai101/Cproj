@@ -27,12 +27,18 @@ unsigned short find_st_short(char name_of_value)
 {
 	long long int time_LLI;
 	printf("Please, enter integer digit %c, which is belonged to [1, 65530]: ", name_of_value);
-	if (!scanf("%d", &time_LLI))
+	if (!scanf("%lld", &time_LLI))
 	{
 		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
-	if ((time_LLI > 65530) || (time_LLI < 1))
+	if (time_LLI > 65530)
+	{
+		printf("Wrong interval interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
+		_Exit(EXIT_SUCCESS);
+	}
+	printf("%lld\n", time_LLI);
+	if (! time_LLI >= 1)
 	{
 		printf("Wrong interval interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
@@ -43,12 +49,12 @@ unsigned short find_st_short(char name_of_value)
 
 float* make_arr(unsigned short n)
 {
+	float* main_arry;
 	main_arry = (float*)malloc(n * sizeof(float));
 	for (int i = 0; i != n; i++)
 	{
 		*(main_arry + i) = i + 1;
 	}
-public: 
 	main_arry;
 	return main_arry;
 }
