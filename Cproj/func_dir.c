@@ -46,9 +46,12 @@ float* make_arr(unsigned short n)
 {
 	float* main_arry;
 	main_arry = (float*)malloc(n * sizeof(float));
-	for (int i = 0; i != n; i++)
+	if(main_arry)
 	{
-		*(main_arry + i) = i + 1;
+		for (int i = 0; i != n; i++)
+		{
+			*(main_arry + i) = i + 1;
+		}
 	}
 	main_arry;
 	return main_arry;
@@ -82,7 +85,10 @@ float* clean_by_index(float* main_arry, unsigned short n)
 			stap++;
 		}
 	}
-	*(time_arry) = stap - 1;
+	if (time_arry)
+	{
+		*(time_arry) = stap - 1;
+	}
 	if (stap - 1 == 1)
 	{
 		printf("Sorry, there are not anyone elenents, which satisfy the condition");
@@ -95,9 +101,12 @@ float* castling(float* main_arry, unsigned short n)
 {
 	float* main_arry_2;
 	main_arry_2 = (float*)malloc(n * sizeof(float));
-	for (int i = 0; i != n; i++)
+	if(main_arry_2)
 	{
-		*(main_arry_2 + i) = *(main_arry + 1 + i);
+		for (int i = 0; i != n; i++)
+		{
+			*(main_arry_2 + i) = *(main_arry + 1 + i);
+		}
 	}
 	return main_arry_2;
 }
