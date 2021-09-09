@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-float* main_arry;
-
 float find_st_float(char name_of_value)
 {
 	float time_float;
@@ -37,7 +35,6 @@ unsigned short find_st_short(char name_of_value)
 		printf("Wrong interval interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
-	printf("%lld\n", time_LLI);
 	unsigned short time_short = time_LLI;
 	return time_short;
 }
@@ -79,17 +76,28 @@ float* clean_by_index(float* main_arry, unsigned short n)
 	time_arry = (float*)malloc(n * sizeof(float));
 	for (int i = 0; i != n; i++)
 	{
-		if ((*(main_arry + i) > 0) && ((*(main_arry + i) < (i + 1) / 3) || ((i + 1) >= 4)))
+		if (*(main_arry + i) > 0)
 		{
-			*(time_arry + stap) = *(main_arry + i);
-			stap++;
+			if ((i + 1) >= 4)
+			{
+				*(time_arry + stap) = *(main_arry + i);
+				stap++;
+			}
+			else
+			{
+				if (*(main_arry + i) < (i + 1) / 3)
+				{
+					*(time_arry + stap) = *(main_arry + i);
+					stap++;
+				}
+			}
 		}
 	}
 	if (time_arry)
 	{
 		*(time_arry) = stap - 1;
 	}
-	if (stap - 1 == 1)
+	if ((stap - 1) == 1)
 	{
 		printf("Sorry, there are not anyone elenents, which satisfy the condition");
 		_Exit(EXIT_SUCCESS);
