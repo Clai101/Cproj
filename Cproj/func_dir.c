@@ -15,7 +15,7 @@ float find_st_float(char name_of_value)
 		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n");
 		_Exit(EXIT_SUCCESS);
 	}
-	if ((time_float > 10) | (time_float < -10))
+	if ((time_float > 10) || (time_float < -10))
 	{
 		printf("Wrong interval interval was taken.\n[-10, 10] was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
@@ -32,17 +32,12 @@ unsigned short find_st_short(char name_of_value)
 		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
-	if (time_LLI > 65530)
+	if ((time_LLI > 65530) || (time_LLI < 1))
 	{
 		printf("Wrong interval interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
 	printf("%lld\n", time_LLI);
-	if (! time_LLI >= 1)
-	{
-		printf("Wrong interval interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
-		_Exit(EXIT_SUCCESS);
-	}
 	unsigned short time_short = time_LLI;
 	return time_short;
 }
@@ -88,6 +83,11 @@ float* clean_by_index(float* main_arry, unsigned short n)
 		}
 	}
 	*(time_arry) = stap - 1;
+	if (stap - 1 == 1)
+	{
+		printf("Sorry, there are not anyone elenents, which satisfy the condition");
+		_Exit(EXIT_SUCCESS);
+	}
 	return time_arry;
 }
 
