@@ -8,11 +8,11 @@
 #include <stdlib.h>
 #include <math.h>
 
-unsigned short find_st_short(char name_of_value);
-float* make_arr(unsigned short n);
-float* use_sin(float* main_arry, unsigned short n);
-float* clean_by_index(float* main_arry, unsigned short n);
-float* castling(float* main_arry, unsigned short n);
-float find_average(float* main_arry, unsigned short n);
+unsigned short find_st_short(char);
+double* make_arr(unsigned short);
+double* use_sin(double*, unsigned short);
+double* clean_by_index(double*, unsigned short);
+double* castling(double* , unsigned short);
+double find_average(double*, unsigned short);
 
 #endif

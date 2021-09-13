@@ -1,14 +1,10 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <malloc.h>
-#include <stdlib.h>
-#include <math.h>
+#include "Header_for_C.h"
 
-float find_st_float(char name_of_value)
+double find_st_float(char name_of_value)
 {
-	float time_float;
-	printf("Please, enter digit %c, which is belonged to [-10, 10]: ", name_of_value);
-	if (!scanf("%f", &time_float))
+	double time_float;
+	printf("Please, enter number %c, which is belonged to [-10, 10]: ", name_of_value);
+	if (!scanf("%lf", &time_float))
 	{
 		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n");
 		_Exit(EXIT_SUCCESS);
@@ -27,22 +23,22 @@ unsigned short find_st_short(char name_of_value)
 	printf("Please, enter integer digit %c, which is belonged to [1, 65530]: ", name_of_value);
 	if (!scanf("%lld", &time_LLI))
 	{
-		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n ");
+		printf("Wrong type of data was taken.\nNumber was expected.\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
 	if ((time_LLI > 65530) || (time_LLI < 1))
 	{
-		printf("Wrong interval  was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
+		printf("Wrong interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
 		_Exit(EXIT_SUCCESS);
 	}
 	unsigned short time_short = time_LLI;
 	return time_short;
 }
 
-float* make_arr(unsigned short n)
+double* make_arr(unsigned short n)
 {
-	float* main_arry;
-	main_arry = (float*)malloc(n * sizeof(float));
+	double* main_arry;
+	main_arry = (double*)malloc(n * sizeof(double));
 	if(main_arry)
 	{
 		for (int i = 0; i != n; i++)
@@ -54,26 +50,26 @@ float* make_arr(unsigned short n)
 	return main_arry;
 }
 
-float* use_sin(float* main_arry, unsigned short n)
+double* use_sin(double* main_arry, unsigned short n)
 {
-	float a = 0, x = 0, h = 0;
+	double a = 0, x = 0, h = 0;
 	a = find_st_float('a');
 	x = find_st_float('x');
 	h = find_st_float('h');
 
 	for (int i = 0; i != n; i++)
 	{
-		float time_value = *(main_arry + i);
+		double time_value = *(main_arry + i);
 		*(main_arry + i) = 1.25*sin(3*a*x - (time_value)*h);
 	}
 	return main_arry;
 }
 
-float* clean_by_index(float* main_arry, unsigned short n)
+double* clean_by_index(double* main_arry, unsigned short n)
 {
-	float* time_arry;
+	double* time_arry;
 	unsigned short stap = 1;
-	time_arry = (float*)malloc(n * sizeof(float));
+	time_arry = (double*)malloc(n * sizeof(double));
 	for (int i = 0; i != n; i++)
 	{
 		if (*(main_arry + i) > 0)
@@ -106,10 +102,10 @@ float* clean_by_index(float* main_arry, unsigned short n)
 	return time_arry;
 }
 
-float* castling(float* main_arry, unsigned short n)
+double* castling(double* main_arry, unsigned short n)
 {
-	float* main_arry_2;
-	main_arry_2 = (float*)malloc(n * sizeof(float));
+	double* main_arry_2;
+	main_arry_2 = (double*)malloc(n * sizeof(double));
 	if(main_arry_2)
 	{
 		for (int i = 0; i != n; i++)
@@ -120,9 +116,9 @@ float* castling(float* main_arry, unsigned short n)
 	return main_arry_2;
 }
 
-float find_average(float* main_arry, unsigned short n)
+double find_average(double* main_arry, unsigned short n)
 {
-	float average = 0
+	double average = 0
 		;
 	for (int i = 0; i != n; i++)
 	{
