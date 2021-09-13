@@ -3,7 +3,7 @@
 int main()
 {
 	//Пункт 1
-	printf("Laboratory work №1 was made by Karibdzhanov Matvei. Variant 148.\n");
+	printf("Laboratory work 1 was made by Karibdzhanov Matvei. Variant 148.\n");
 	unsigned short n;
 	n = find_st_short('n');
 	double* main_arry_1 = make_arr(n+1);
