@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <stdlib.h>
-#include <stdlib.h>
 #include <math.h>
 
 unsigned short find_st_short(char);
