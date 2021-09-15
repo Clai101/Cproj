@@ -1,6 +1,6 @@
 #include "Header_for_C.h"
 
-double find_st_float(char name_of_value)
+double find_st_double(char name_of_value)
 {
 	double time_float;
 	printf("Please, enter number %c, which is belonged to [-10, 10]: ", name_of_value);
@@ -53,9 +53,9 @@ double* make_arr(unsigned short n)
 double* use_sin(double* main_arry, unsigned short n)
 {
 	double a = 0, x = 0, h = 0;
-	a = find_st_float('a');
-	x = find_st_float('x');
-	h = find_st_float('h');
+	a = find_st_double('a');
+	x = find_st_double('x');
+	h = find_st_double('h');
 
 	for (int i = 0; i != n; i++)
 	{
