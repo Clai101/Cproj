@@ -6,13 +6,22 @@
 #include <malloc.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
-unsigned short find_st_short(char);
-double find_st_double(char);
+//Общие
+unsigned short us_find_st_input(char name_of_value, long long int down_border, long long int up_border);
+double d_find_st_input(char name_of_value_e, long double down_border, long double up_border);
+
+//Лаба 2
+int** make_matrix(unsigned short x, unsigned short y);
+int* converce_matrix(int** matrix, unsigned short x, unsigned short y);
+
+//Лаба 1
 double* make_arr(unsigned short);
 double* use_sin(double*, unsigned short);
 double* clean_by_index(double*, unsigned short);
 double* castling(double* , unsigned short);
 double find_average(double*, unsigned short);
-s
+
+
 #endif

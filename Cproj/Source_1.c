@@ -1,11 +1,11 @@
-#include "Header_for_C.h"
+ï»¿#include "Header_for_C.h"
 
-int main()
+int main2()
 {
-	//Ïóíêò 1
+	//ĞŸÑƒĞ½ĞºÑ‚ 1
 	printf("Laboratory work 1 was made by Karibdzhanov Matvei. Variant 148.\n");
 	unsigned short n;
-	n = find_st_short('n');
+	n = us_find_st_input('n', 0, 65530);
 	double* main_arry_1 = make_arr(n+1);
 	main_arry_1 = use_sin(main_arry_1, n);
 	printf("\n");
@@ -16,7 +16,7 @@ int main()
 	}
 	printf("\n\n");
 	
-	//Ïóíêò 2
+	//ĞŸÑƒĞ½ĞºÑ‚ 2
 	main_arry_1 = clean_by_index(main_arry_1, n);
 	n = *(main_arry_1);
 	double* main_arry_2 = castling(main_arry_1, n);
@@ -28,7 +28,7 @@ int main()
 	}
 	printf("\n\n");
 
-	//Ïóíêò 3
+	//ĞŸÑƒĞ½ĞºÑ‚ 3
 	double avarege = find_average(main_arry_2, n);
 
 	printf("Part three answer:\n");

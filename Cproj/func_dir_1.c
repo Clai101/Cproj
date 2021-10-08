@@ -1,40 +1,5 @@
 #include "Header_for_C.h"
 
-double find_st_double(char name_of_value)
-{
-	double time_float;
-	printf("Please, enter number %c, which is belonged to [-10, 10]: ", name_of_value);
-	if (!scanf("%lf", &time_float))
-	{
-		printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n");
-		_Exit(EXIT_SUCCESS);
-	}
-	if ((time_float > 10) || (time_float < -10))
-	{
-		printf("Wrong interval was taken.\n[-10, 10] was expected.\nTRY AGAIN\n ");
-		_Exit(EXIT_SUCCESS);
-	}
-	return time_float;
-}
-
-unsigned short find_st_short(char name_of_value)
-{
-	long long int time_LLI;
-	printf("Please, enter integer digit %c, which is belonged to [1, 65530]: ", name_of_value);
-	if (!scanf("%lld", &time_LLI))
-	{
-		printf("Wrong type of data was taken.\nNumber was expected.\nTRY AGAIN\n ");
-		_Exit(EXIT_SUCCESS);
-	}
-	if ((time_LLI > 65530) || (time_LLI < 1))
-	{
-		printf("Wrong interval was taken.\nExpected [1, 65530].\nTRY AGAIN\n ");
-		_Exit(EXIT_SUCCESS);
-	}
-	unsigned short time_short = time_LLI;
-	return time_short;
-}
-
 double* make_arr(unsigned short n)
 {
 	double* main_arry;
@@ -53,9 +18,9 @@ double* make_arr(unsigned short n)
 double* use_sin(double* main_arry, unsigned short n)
 {
 	double a = 0, x = 0, h = 0;
-	a = find_st_double('a');
-	x = find_st_double('x');
-	h = find_st_double('h');
+	a = d_find_st_input('a', -10.0, 10.0);
+	x = d_find_st_input('x', -10.0, 10.0);
+	h = d_find_st_input('h', -10.0, 10.0);
 
 	for (int i = 0; i != n; i++)
 	{
