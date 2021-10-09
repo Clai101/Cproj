@@ -9,14 +9,17 @@
 #include <time.h>
 
 //Общие
-unsigned short us_find_st_input(char name_of_value, long long int down_border, long long int up_border);
-double d_find_st_input(char name_of_value_e, long double down_border, long double up_border);
-double* castling(double* arr, unsigned short arr_len);
-double* append(double* arr, double new_element ,unsigned short arr_len);
+unsigned short us_find_st_input(char*, long long int, long long int);
+int i_find_st_input(char*, long long int, long long int);
+double d_find_st_input(char*, long double, long double);
+double* castling(double*, unsigned short);
+double* append(double*, double ,unsigned short);
+int* castling_i(int*, unsigned short);
 
 //Лаба 2
-int** make_matrix(unsigned short x, unsigned short y);
-int* converce_matrix(int** matrix, unsigned short x, unsigned short y);
+int** make_matrix(unsigned short, unsigned short);
+int* converce_matrix(int**, unsigned short, unsigned short);
+int* filter_by_digit(int*, unsigned short, unsigned short);
 
 //Лаба 1
 double* make_arr(unsigned short);

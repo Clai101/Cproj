@@ -18,9 +18,9 @@ double* make_arr(unsigned short n)
 double* use_sin(double* main_arry, unsigned short n)
 {
 	double a = 0, x = 0, h = 0;
-	a = d_find_st_input('a', -10.0, 10.0);
-	x = d_find_st_input('x', -10.0, 10.0);
-	h = d_find_st_input('h', -10.0, 10.0);
+	a = d_find_st_input("a", -10.0, 10.0);
+	x = d_find_st_input("x", -10.0, 10.0);
+	h = d_find_st_input("h", -10.0, 10.0);
 
 	for (int i = 0; i != n; i++)
 	{
@@ -65,20 +65,6 @@ double* clean_by_index(double* main_arry, unsigned short n)
 		_Exit(EXIT_SUCCESS);
 	}
 	return time_arry;
-}
-
-double* castling(double* main_arry, unsigned short n)
-{
-	double* main_arry_2;
-	main_arry_2 = (double*)malloc(n * sizeof(double));
-	if(main_arry_2)
-	{
-		for (int i = 0; i != n; i++)
-		{
-			*(main_arry_2 + i) = *(main_arry + 1 + i);
-		}
-	}
-	return main_arry_2;
 }
 
 double find_average(double* main_arry, unsigned short n)

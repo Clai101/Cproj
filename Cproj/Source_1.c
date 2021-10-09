@@ -5,7 +5,7 @@ int main2()
 	//Пункт 1
 	printf("Laboratory work 1 was made by Karibdzhanov Matvei. Variant 148.\n");
 	unsigned short n;
-	n = us_find_st_input('n', 0, 65530);
+	n = us_find_st_input("n", 0, 65530);
 	double* main_arry_1 = make_arr(n+1);
 	main_arry_1 = use_sin(main_arry_1, n);
 	printf("\n");
