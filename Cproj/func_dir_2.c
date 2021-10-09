@@ -60,7 +60,7 @@ unsigned short main_decay(int number)
     {
         number = number / 10;
     }
-    while (!(critarion <= number < critarion + 1))
+    while (!((critarion <= number) && (number < critarion + 1)))
     {
         critarion++;
     }

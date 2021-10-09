@@ -2,7 +2,7 @@
 
 int main()
 {
-	printf("Pth 1.8 \n");
+	printf("Laboratory work 2 was made by Karibdzhanov Matvei. Variant 148.\n");
 
 	//Инициализация
 	unsigned short colums, lines;
@@ -27,6 +27,11 @@ int main()
 	int* time_arr_1 = converce_matrix(matrix, lines, colums);
 	unsigned short len_arr = time_arr_1[0];
 	int* arr_1 = castling_i(time_arr_1, len_arr);
+	if (len_arr == 0)
+	{
+		printf("There are not anyone negative elements in matrix.\n");
+		_Exit(EXIT_SUCCESS);
+	}
 	for (int iter = 0; iter < len_arr; iter++)
 	{
 		printf("%i ", *(iter + arr_1));
@@ -38,6 +43,11 @@ int main()
 	int* time_arr_2 = filter_by_digit(arr_1, len_arr, criter);
 	len_arr = time_arr_2[0];
 	int* arr_2 = castling_i(time_arr_2, len_arr);
+	if (len_arr == 0)
+	{
+		printf("There are not anyone elements, which are satisfy the condition, in arry.\n");
+		_Exit(EXIT_SUCCESS);
+	}
 	for (int iter = 0; iter < len_arr; iter++)
 	{
 		printf("%i ", *(iter + arr_2));

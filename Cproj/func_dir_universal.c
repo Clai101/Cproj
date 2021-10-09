@@ -9,11 +9,12 @@ double d_find_st_input(char* name_of_value_e, long double down_border, long doub
 		if (!scanf("%lf", &time_float))
 		{
 			printf("Wrong type of data was taken.\nFloat was expected.\nTRY AGAIN\n");
+			for (int c = getchar(); c != '\n' && c != EOF; c = getchar());
 			continue;
 		}
 		if ((time_float > up_border) || (time_float < down_border))
 		{
-			printf("Wrong interval was taken.\n[%llf, %llf] was expected.\nTRY AGAIN\n ", down_border, up_border);
+			printf("Wrong interval was taken.\n[%llf, %llf] was expected.\nTRY AGAIN\n", down_border, up_border);
 			continue;
 		}
 		break;
@@ -29,12 +30,13 @@ unsigned short us_find_st_input(char* name_of_value, long long int down_border, 
 		printf("Please, enter integer digit %s, which is belonged to [%lld, %lld]: ", name_of_value, down_border, up_border);
 		if (!scanf("%lli", &time_LLI))
 		{
-			printf("Wrong type of data was taken.\nNumber was expected.\nTRY AGAIN\n ");
+			printf("Wrong type of data was taken.\nNumber was expected.\nTRY AGAIN\n");
+			for (int c = getchar(); c != '\n' && c != EOF; c = getchar());
 			continue;
 		}
 		if ((time_LLI > up_border) || (time_LLI < down_border))
 		{
-			printf("Wrong interval was taken.\nExpected [%lld, %lld].\nTRY AGAIN\n ", down_border, up_border);
+			printf("Wrong interval was taken.\nExpected [%lld, %lld].\nTRY AGAIN\n", down_border, up_border);
 			continue;
 		}
 		break;
@@ -51,12 +53,13 @@ int i_find_st_input(char* name_of_value, long long int down_border, long long in
 		printf("Please, enter integer digit %s, which is belonged to [%lld, %lld]: ", name_of_value, down_border, up_border);
 		if (!scanf("%lli", &time_LLI))
 		{
-			printf("Wrong type of data was taken.\nNumber was expected.\nTRY AGAIN\n ");
+			printf("Wrong type of data was taken.\nNumber was expected.\nTRY AGAIN\n");
+			for (int c = getchar(); c != '\n' && c != EOF; c = getchar());
 			continue;
 		}
 		if ((time_LLI > up_border) || (time_LLI < down_border))
 		{
-			printf("Wrong interval was taken.\nExpected [%lld, %lld].\nTRY AGAIN\n ", down_border, up_border);
+			printf("Wrong interval was taken.\nExpected [%lld, %lld].\nTRY AGAIN\n", down_border, up_border);
 			continue;
 		}
 		break;
