@@ -1,41 +1,41 @@
 #include "Header_for_C.h"
 
-int** make_matrix(unsigned short x, unsigned short y)
+double** make_matrix(unsigned short x, unsigned short y)
 {
-	int** matrix;
-    matrix = (int**)malloc(x * sizeof(int*));
+    double** matrix_1;
+    double time_value;
+    matrix_1 = (double**)malloc(x * sizeof(double*));
+    printf("matrix[%d][%d]\n", x, y);
     for (int i = 0; i < x; i++)
     {
-        matrix[i] = (int*)malloc(y * sizeof(int));
+        matrix_1[i] = (double*)malloc(y * sizeof(double));
         for (int j = 0; j < y; j++)
         {
             printf("matrix[%d][%d] = ", i, j);
-            scanf("%lf", &(matrix[i][j]));
+            scanf("%d", &time_value);
+            matrix_1[i][j] = time_value;
+            break;
         }
     }
-    return matrix;
+    return matrix_1;
 }
 
 int* converce_matrix(int** matrix, unsigned short x, unsigned short y)
 {
     int* Q;
     int n = 1;
-    Q = (int*)malloc(n * sizeof(int));
+    Q = (int*)malloc(1 * sizeof(int));
     for (int i = 0; i < x; i++)
     {
         for (int j = 0; j < y-1; j++)
         {
             if (matrix[i][j] < 0)
             {
-                *(Q + n) = matrix[i][j+1];
                 n++;
-                Q = (int*)malloc(n * sizeof(int));
+                Q = append(Q, matrix[i][j], n);
             }
         }
     }
-    *Q = n-1;
+    Q[0] = n - 1;
     return Q;
 }
-
-
-

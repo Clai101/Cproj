@@ -8,8 +8,9 @@ int main()
 
 	int** matrix = make_matrix(x, y);
 	int* arr = converce_matrix(matrix, x, y);
-	for (int iter = 1; iter < arr[0]; iter++)
+	printf("%d\n", *(0 + arr));
+	for (int iter = 1; iter < arr[0]+1; iter++)
 	{
-		printf("%d", *(iter + arr));
+		printf("%d ", *(iter + arr));
 	}
 }

@@ -34,3 +34,15 @@ unsigned short us_find_st_input(char name_of_value, long long int down_border, l
 	unsigned short time_short = time_LLI;
 	return time_short;
 }
+
+double* append(double* arr, double new_element, unsigned short arr_len)
+{
+	double* new_arr;
+	new_arr = (double*)malloc((arr_len + 1) * sizeof(double));
+	for (size_t i = 0; i < arr_len; i++)
+	{
+		new_arr[i] = arr[i];
+	}
+	new_arr[arr_len + 1] = new_element;
+	return new_arr;
+}
