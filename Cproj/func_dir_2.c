@@ -36,7 +36,7 @@ int* converce_matrix(int** matrix, unsigned short colums, unsigned short lines)
     {
         condition_arry[i] = i_find_st_input("element of condition arry", -10000, 10000);
     }
-    Q = (int*)malloc((colums * lines) * sizeof(int));
+    Q = (int*)malloc((colums * (lines-1)) * sizeof(int));
     for (int colum = 0; colum < colums; colum++)
     {
         for (int line = 0; line < lines - 1; line++)
@@ -91,7 +91,7 @@ int* filter_by_digit(int* arr, unsigned short len_arr, unsigned short critarion)
             new_arr[n] = arr[i];
         }
     }
-    printf("There are %d elements, which are satisfy the condition, in matrix.\n", n);
+    printf("There are %d elements, which are satisfy the condition, in arry.\n", n);
     new_arr[0] = n;
     return new_arr;
 }
@@ -104,6 +104,6 @@ int in_arr(int* condition_arry, int arry_size, int num)
         {
             return 0;
         }
-        return 1;
     }
+    return 1;
 }

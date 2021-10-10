@@ -25,7 +25,7 @@ int main()
 
 	//Пункт 1
 	printf("Part one answer:\n\n");
-	int* time_arr_1 = converce_matrix(matrix, lines, colums);
+	int* time_arr_1 = converce_matrix(matrix, colums, lines);
 	unsigned short len_arr = time_arr_1[0];
 	int* arr_1 = castling_i(time_arr_1, len_arr);
 	if (len_arr == 0)
