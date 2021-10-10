@@ -30,7 +30,7 @@ unsigned short us_find_st_input(char* name_of_value, long long int down_border, 
 		printf("Please, enter integer digit %s, which is belonged to [%lld, %lld]: ", name_of_value, down_border, up_border);
 		if (!scanf("%lli", &time_LLI))
 		{
-			printf("Wrong type of data was taken.\nNumber was expected.\nTRY AGAIN\n");
+			printf("Wrong type of data was taken.\nInteger  was expected.\nTRY AGAIN\n");
 			for (int c = getchar(); c != '\n' && c != EOF; c = getchar());
 			continue;
 		}
@@ -53,7 +53,7 @@ int i_find_st_input(char* name_of_value, long long int down_border, long long in
 		printf("Please, enter integer digit %s, which is belonged to [%lld, %lld]: ", name_of_value, down_border, up_border);
 		if (!scanf("%lli", &time_LLI))
 		{
-			printf("Wrong type of data was taken.\nNumber was expected.\nTRY AGAIN\n");
+			printf("Wrong type of data was taken.\nInteger  was expected.\nTRY AGAIN\n");
 			for (int c = getchar(); c != '\n' && c != EOF; c = getchar());
 			continue;
 		}
@@ -93,6 +93,7 @@ double* castling(double* main_arry, unsigned short n)
 	}
 	return main_arry_2;
 }
+
 int* castling_i(int* main_arry, unsigned short n)
 {
 	int* main_arry_2;

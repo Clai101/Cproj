@@ -24,21 +24,25 @@ int main()
 	}
 
 	//Пункт 1
+	printf("Part one answer:\n\n");
 	int* time_arr_1 = converce_matrix(matrix, lines, colums);
 	unsigned short len_arr = time_arr_1[0];
 	int* arr_1 = castling_i(time_arr_1, len_arr);
 	if (len_arr == 0)
 	{
-		printf("There are not anyone negative elements in matrix.\n");
+		printf("There are not any elements, which are satisfy the condition, in matrix.\n");
 		_Exit(EXIT_SUCCESS);
 	}
-	for (int iter = 0; iter < len_arr; iter++)
+	printf("[");
+	for (int iter = 0; iter < len_arr-1; iter++)
 	{
-		printf("%i ", *(iter + arr_1));
+		printf("%i, ", *(iter + arr_1));
 	}
-	printf("\n");
+	printf("%i", *(len_arr - 1 + arr_1));
+	printf("]\n\n\n");
 
 	//Пункт 2
+	printf("Part two answer:\n\n");
 	unsigned short criter = us_find_st_input("critarion", 0, 9);
 	int* time_arr_2 = filter_by_digit(arr_1, len_arr, criter);
 	len_arr = time_arr_2[0];
@@ -48,9 +52,11 @@ int main()
 		printf("There are not anyone elements, which are satisfy the condition, in arry.\n");
 		_Exit(EXIT_SUCCESS);
 	}
-	for (int iter = 0; iter < len_arr; iter++)
+	printf("[");
+	for (int iter = 0; iter < len_arr-1; iter++)
 	{
-		printf("%i ", *(iter + arr_2));
+		printf("%i, ", *(iter + arr_2));
 	}
-	printf("\n");
+	printf("%i", *(len_arr - 1 + arr_2));
+	printf("]\n\n");
 }

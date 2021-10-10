@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <stdbool.h>
 
 //Общие
 unsigned short us_find_st_input(char*, long long int, long long int);
