@@ -107,3 +107,41 @@ int* castling_i(int* main_arry, unsigned short n)
 	}
 	return main_arry_2;
 }
+
+double* make_arr(unsigned short _long)
+{
+	double* arry;
+	arry = (double*)malloc(_long * sizeof(double));
+	if (arry)
+	{
+		for (int i = 0; i != _long; i++)
+		{
+			*(arry + i) = i + 1;
+		}
+	}
+	return arry;
+}
+
+double** make_matrix(unsigned short colums, unsigned short lines)
+{
+	double** matrix_1;
+	int time_value;
+	matrix_1 = (double**)malloc(lines * sizeof(double*));
+	for (int i = 0; i < lines; i++)
+	{
+		if (matrix_1)
+		{
+			matrix_1[i] = (double*)malloc(colums * sizeof(double));
+		}
+		for (int j = 0; j < colums; j++)
+		{
+			time_value = d_find_st_input("element of matrix", -1000, 1000);
+			printf("matrix_1[%d][%d] = %d\n", i + 1, j + 1, time_value);
+			if (matrix_1)
+			{
+				matrix_1[i][j] = time_value;
+			}
+		}
+	}
+	return matrix_1;
+}

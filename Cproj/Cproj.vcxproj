@@ -140,11 +140,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="func_dir_1.c" />
-    <ClCompile Include="func_dir_2.c" />
+    <ClCompile Include="func_dir_3.c" />
     <ClCompile Include="func_dir_universal.c" />
-    <ClCompile Include="Source_1.c" />
-    <ClCompile Include="Source_2.c" />
+    <ClCompile Include="Source3.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header_for_C.h" />

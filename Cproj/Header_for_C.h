@@ -10,23 +10,20 @@
 #include <stdbool.h>
 
 //Общие
-unsigned short us_find_st_input(char*, long long int, long long int);
-int i_find_st_input(char*, long long int, long long int);
-double d_find_st_input(char*, long double, long double);
-double* castling(double*, unsigned short);
-double* append(double*, double ,unsigned short);
-int* castling_i(int*, unsigned short);
+unsigned short us_find_st_input(char*, long long int, long long int); //проверяет на совпадение типов и придалежность промежутку для unsigned short
+int i_find_st_input(char*, long long int, long long int); //проверяет на совпадение типов и придалежность промежутку для int
+double d_find_st_input(char*, long double, long double); //проверяет на совпадение типов и придалежность промежутку для double
+double* castling(double*, unsigned short); // убирает 1 элемент в массиве для double
+int* castling_i(int*, unsigned short); // убирает 1 элемент в массиве для int
+double* append(double*, double ,unsigned short); // добавляет элемент в конец массива
+double** make_matrix(unsigned short, unsigned short); // создает матрицу colums X lines
+double* make_arr(unsigned short); // создает массив длинной _long
 
-//Лаба 2
-int** make_matrix(unsigned short, unsigned short);
-int* converce_matrix(int**, unsigned short, unsigned short);
-int* filter_by_digit(int*, unsigned short, unsigned short);
-
-//Лаба 1
-double* make_arr(unsigned short);
-double* use_sin(double*, unsigned short);
-double* clean_by_index(double*, unsigned short);
-double find_average(double*, unsigned short);
-
+//func_dir_3
+double deviding_and_difference(double, double, double, double);
+double find_max_min(unsigned short, unsigned short, double**);
+unsigned short bin_search(unsigned short, double*, double);
+double* add_to_set(unsigned short, double*, double);
+double* func_3(unsigned short, double*, double*);
 
 #endif
