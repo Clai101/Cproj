@@ -7,9 +7,14 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <locale.h>
+#include <conio.h>
+#include <string.h>
 #include <stdbool.h>
 
-//Общие
+#define TERM_WORD "end"
+
+//Universal
 unsigned short us_find_st_input(char*, long long int, long long int); //проверяет на совпадение типов и придалежность промежутку для unsigned short
 int i_find_st_input(char*, long long int, long long int); //проверяет на совпадение типов и придалежность промежутку для int
 double d_find_st_input(char*, long double, long double); //проверяет на совпадение типов и придалежность промежутку для double
@@ -18,12 +23,8 @@ int* castling_i(int*, unsigned short); // убирает 1 элемент в массиве для int
 double* append(double*, double ,unsigned short); // добавляет элемент в конец массива
 double** make_matrix(unsigned short, unsigned short); // создает матрицу colums X lines
 double* make_arr(unsigned short); // создает массив длинной _long
+unsigned short bin_search(unsigned short, double*, double); //Бинарная сортировка доработанная
+char* st_find_st_input(char*); //Принятие строк
 
-//func_dir_3
-double deviding_and_difference(double, double, double, double);
-double find_max_min(unsigned short, unsigned short, double**);
-unsigned short bin_search(unsigned short, double*, double);
-double* add_to_set(unsigned short, double*, double);
-double* func_3(unsigned short, double*, double*);
 
 #endif

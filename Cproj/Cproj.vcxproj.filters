@@ -18,10 +18,7 @@
     <ClCompile Include="func_dir_universal.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="func_dir_3.c">
-      <Filter>Файлы ресурсов</Filter>
-    </ClCompile>
-    <ClCompile Include="Source3.c">
+    <ClCompile Include="dir_func_4.c">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>

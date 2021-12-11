@@ -22,6 +22,24 @@ double d_find_st_input(char* name_of_value_e, long double down_border, long doub
 	return time_float;
 }
 
+char* st_find_st_input(char* name_of_value_e, unsigned short* long_)
+{
+	fflush(stdin);
+	char time_char, * string;
+	unsigned short len = 1;
+	printf("Please, enter string %s: ", name_of_value_e);
+	string = (char*)malloc(1 * sizeof(char));
+	while ((time_char = getchar()) != '\n') {
+		string[len - 1] = time_char;
+		len++;
+		string = (char*)realloc(string, len);
+	}
+	string[len - 1] = '\0';
+	long_[0] = len-1;
+	fflush(stdin);
+	return string;
+}
+
 unsigned short us_find_st_input(char* name_of_value, long long int down_border, long long int up_border)
 {
 	long long int time_LLI;
@@ -144,4 +162,34 @@ double** make_matrix(unsigned short colums, unsigned short lines)
 		}
 	}
 	return matrix_1;
+}
+
+unsigned short bin_search(unsigned short _long, double* arry, double new_element)
+{
+	unsigned short down_border = 1, up_border = _long + 1, point, last_point = 65333;
+	while (true)
+	{
+		point = (down_border + up_border) / 2;
+		if (arry[point] == new_element)
+			return 0;
+		if (point == last_point)
+		{
+			if (arry[point] > new_element)
+				return point;
+			else
+				return point + 1;
+		}
+		if (arry[point] > new_element)
+		{
+			up_border = point;
+			last_point = point;
+			continue;
+		}
+		if (arry[point] < new_element)
+		{
+			down_border = point;
+			last_point = point;
+			continue;
+		}
+	}
 }
